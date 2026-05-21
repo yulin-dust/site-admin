@@ -95,7 +95,7 @@ mcp:
     name: GVA_MCP
     version: v1.0.0
     path: ""
-    addr: 28801
+    addr: 8889
     base_url: ""
     upstream_base_url: ""
     auth_header: ""
@@ -211,6 +211,9 @@ redis-list:
         - 172.21.0.3:7000
         - 172.21.0.4:7001
         - 172.21.0.2:7002
+static-token:
+    header-name: token
+    value: lalala123
 sqlite:
     prefix: ""
     port: ""
@@ -229,7 +232,7 @@ system:
     db-type: pgsql
     oss-type: local
     router-prefix: ""
-    addr: 28888
+    addr: 28801
     iplimit-count: 15000
     iplimit-time: 3600
     use-multipoint: false

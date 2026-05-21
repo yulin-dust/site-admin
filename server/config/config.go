@@ -37,4 +37,7 @@ type Server struct {
 
 	// MCP配置
 	MCP MCP `mapstructure:"mcp" json:"mcp" yaml:"mcp"`
+
+	// 静态 token 校验中间件配置
+	StaticToken StaticToken `mapstructure:"static-token" json:"static-token" yaml:"static-token"`
 }

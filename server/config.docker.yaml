@@ -280,3 +280,7 @@ mcp:
     version: v1.0.0
     addr: 8889
     separate: false
+
+static-token:
+    header-name: token
+    value: lalala123

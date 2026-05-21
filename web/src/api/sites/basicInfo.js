@@ -108,3 +108,16 @@ export const getBasicInfoPublic = () => {
     method: 'get',
   })
 }
+// GetAllSites 获取所有的网站信息
+// @Tags BasicInfo
+// @Summary 获取所有的网站信息
+// @Accept application/json
+// @Produce application/json
+// @Success 200 {object} response.Response{data=object,msg=string} "成功"
+// @Router /basicInfo/getAllSites [GET]
+export const getAllSites = () => {
+  return service({
+    url: '/basicInfo/getAllSites',
+    method: 'GET'
+  })
+}

@@ -121,3 +121,16 @@ export const getPublishStatsPublic = () => {
     method: 'get',
   })
 }
+// AddPublishCount 调用就自动添加当天的更新即总更新数量
+// @Tags PublishStats
+// @Summary 调用就自动添加当天的更新即总更新数量
+// @Accept application/json
+// @Produce application/json
+// @Success 200 {object} response.Response{data=object,msg=string} "成功"
+// @Router /publishStats/addPublishCount [GET]
+export const addPublishCount = () => {
+  return service({
+    url: '/publishStats/addPublishCount',
+    method: 'GET'
+  })
+}
