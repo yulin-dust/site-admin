@@ -1,0 +1,19 @@
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 12:54:51.700	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/router.go:62	register swagger handler
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 12:54:51.700	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/plugin.go:10	项目暂未初始化，无法安装插件，初始化后重启项目即可完成插件安装
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 12:54:51.700	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/router.go:115	router register success
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 12:57:05.586	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/api/v1/system/sys_initdb.go:57	前往初始化数据库
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 12:59:57.451	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/core/server_run.go:48	关闭WEB服务...
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 12:59:57.451	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/core/server_run.go:59	WEB服务已关闭
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:00:15.884	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/gorm.go:86	register table success
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:00:15.948	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/router.go:62	register swagger handler
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:00:16.942	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/router.go:115	router register success
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:25:08.343	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/core/server_run.go:48	关闭WEB服务...
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:25:08.344	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/core/server_run.go:59	WEB服务已关闭
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:25:34.600	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/gorm.go:86	register table success
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:25:34.665	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/router.go:62	register swagger handler
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:25:35.686	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/router.go:115	router register success
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:35:22.371	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/core/server_run.go:48	关闭WEB服务...
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:35:22.372	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/core/server_run.go:59	WEB服务已关闭
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:35:52.139	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/gorm.go:86	register table success
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:35:52.209	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/router.go:62	register swagger handler
+[github.com/flipped-aurora/gin-vue-admin/server]2026-05-21 13:35:53.280	[34minfo[0m	/Users/lalala/coder/go/site-admin/server/initialize/router.go:115	router register success
