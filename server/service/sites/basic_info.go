@@ -119,31 +119,37 @@ func (basicInfoService *BasicInfoService) GetBasicInfoPublic(ctx context.Context
 	// 请自行实现
 }
 
-// GetAllSites 获取正常状态的网站信息（不含 GVA_MODEL / IP 字段）。
-// onlyPending = true 时，仅返回今日发布数还没达到计划数的站点（today_count < plan_count），
-// 适合爬虫调度场景："还需要继续发的站点有哪些"。
+// GetAllSites 获取正常状态的网站信息（不含 GVA_MODEL / IP 字段），
+// 同时携带 sites_publish_stats 中的 today_count / plan_count，
+// 方便外部根据「今日已发 vs 计划发」决定是否还需要继续推送。
+// onlyPending = true 时，仅返回 today_count < plan_count 的站点。
+// 历史数据若没有 publish_stats 行，today_count / plan_count 为 NULL；
+// onlyPending = true 模式下这些行会被 COALESCE(...,0) < COALESCE(...,0) 自然过滤掉（0 < 0 为假）。
 // Author [yourname](https://github.com/yourname)
 func (basicInfoService *BasicInfoService) GetAllSites(ctx context.Context, onlyPending bool) (list []sitesRes.BasicInfoBrief, err error) {
 	db := global.GVA_DB.
 		Model(&sites.BasicInfo{}).
+		// LEFT JOIN：默认场景下没有 stats 行的站点也要返回；过滤模式下再用 WHERE 卡掉
+		Joins("LEFT JOIN sites_publish_stats ps ON ps.site_id = sites_basic_info.id AND ps.deleted_at IS NULL").
 		Where("sites_basic_info.status = ?", basicInfoStatusNormal)
 
 	if onlyPending {
-		// JOIN 发布统计表，过滤当日还未达到计划量的站点
-		db = db.
-			Joins("JOIN sites_publish_stats ps ON ps.site_id = sites_basic_info.id AND ps.deleted_at IS NULL").
-			Where("COALESCE(ps.today_count, 0) < COALESCE(ps.plan_count, 0)")
+		db = db.Where("COALESCE(ps.today_count, 0) < COALESCE(ps.plan_count, 0)")
 	}
 
 	err = db.
-		Select("sites_basic_info.domain",
+		Select(
+			"sites_basic_info.id",
+			"sites_basic_info.domain",
 			"sites_basic_info.url",
 			"sites_basic_info.api_token",
 			"sites_basic_info.cms_type",
 			"sites_basic_info.site_type",
 			"sites_basic_info.status",
 			"sites_basic_info.category_ids",
-			"sites_basic_info.author_ids").
+			"sites_basic_info.author_ids",
+			"ps.today_count",
+			"ps.plan_count").
 		Find(&list).Error
 	return
 }
